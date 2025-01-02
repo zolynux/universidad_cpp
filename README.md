@@ -22,6 +22,20 @@
     - [Ejercicio Propuesto: Tipo de Datos en C++](#ejercicio-propuesto-tipo-de-datos-en-c)
     - [Constantes en C++](#constantes-en-c)
     - [Tamaño en Bytes de los Tipos de Datos en C++](#tamaño-en-bytes-de-los-tipos-de-datos-en-c)
+  - [Operadores en C++](#operadores-en-c)
+    - [Operadores Aritméticos](#operadores-aritméticos)
+    - [Operadores de Incremento/Decremento en C++](#operadores-de-incrementodecremento-en-c)
+    - [Ejercicio Operadores de Incremento y Decremento en C++](#ejercicio-operadores-de-incremento-y-decremento-en-c)
+    - [Operadores de Asignación en C++](#operadores-de-asignación-en-c)
+    - [Operadores de Comparación ó Relacionales en C++](#operadores-de-comparación-ó-relacionales-en-c)
+      - [Los operadores de comparación en C++ son](#los-operadores-de-comparación-en-c-son)
+    - [Operadores Lógicos en C++](#operadores-lógicos-en-c)
+      - [Tabla de Verdad](#tabla-de-verdad)
+        - [AND](#and)
+        - [OR](#or)
+        - [NOT](#not)
+    - [Ejercicio Valor dentro de Rango en C++](#ejercicio-valor-dentro-de-rango-en-c)
+    - [Ejercicio de Precedencia de Operadores en C++](#ejercicio-de-precedencia-de-operadores-en-c)
 
 ---
 
@@ -216,7 +230,6 @@ Booleano: 0
 ```
 
 ### Cadena en C++
-
 
 ```cpp
 #include <iostream>
@@ -523,3 +536,420 @@ bool tamanio bytes: 1
 cadena tamanio length: 10
 cadena tamanio size: 10
 ```
+
+---
+
+## Operadores en C++
+
+Los operadores nos permiten realizar operaciones al usar valores y variables.
+
+**Tipos de Operadores:**
+
+- Aritméticos
+- Asignación
+- Comparación
+- Lógicos
+
+### Operadores Aritméticos
+
+| Operadores | Significado               | Ejemplos  |
+| ---------- | ------------------------- | --------- |
+| +          | Suma                      | x + y     |
+| -          | Resta                     | x - y     |
+| *          | Multiplicación            | x * y     |
+| /          | División                  | x / y     |
+| %          | Modulo (Residua División) | x % y     |
+| ++         | Incremento                | ++x o x++ |
+| --         | Decremento                | --x o x-- |
+
+---
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Operadores aritmeticos
+  int a, b, c, f;
+  float d;
+
+  // suma +
+  a = 3 + 4;
+  cout << "Suma: " << a << endl;
+  // Resta -
+  b = 6 - 2;
+  cout << "Resta: " << b << endl;
+  // Multiplicacion *
+  c = a * 2;
+  cout << "Multiplicacion: " << c << endl;
+  // Division
+  d = b / 2.5;
+  cout << "Division: " << d << endl;
+  // Modulo (residuo division)
+  f = 9 % 2;
+  cout << "Modulo: " << f << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Suma: 7
+Resta: 4
+Multiplicacion: 14
+Division: 1.6
+Modulo: 1
+```
+
+### Operadores de Incremento/Decremento en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Operadores Incremento
+  int a = 0, b, c;
+  // Operador Pre-Incremento
+  ++a; // Se incrementa antes de ser utilizada nuevamente.
+  cout << "Nuevo valor a (++a): " << a << endl;
+  // Operador Post-Incremento
+  a++; // Se incrementa hasta la siguiente vez que se utilice
+  cout << "Nuevo valor a (a++): " << a << endl;
+
+  // Operadores Decremento
+  // Operador Pre-Decremento
+  --a; // Se decrementa antes de ser utilizada nuevamente.
+  cout << "Nuevo valor a (--a): " << a << endl;
+  // Operador Post-Decremento
+  a--; // Se decrementa hasta la siguiente vez que se utilice
+  cout << "Nuevo valor a (a--): " << a << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Nuevo valor a (++a): 1
+Nuevo valor a (a++): 2
+Nuevo valor a (--a): 1
+Nuevo valor a (a--): 0
+```
+
+### Ejercicio Operadores de Incremento y Decremento en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Ejercicio Incremento / Decremento
+  int a = 5, b = 2, c;
+  c = ++a * b++;
+  cout << "Valor a: " << a << endl;
+  cout << "Valor b: " << b << endl;
+  cout << "Valor c: " << c << endl;
+
+  c = --a * b--;
+  cout << endl;
+  cout << "Valor a: " << a << endl;
+  cout << "Valor b: " << b << endl;
+  cout << "Valor c: " << c << endl;
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor a: 6
+Valor b: 3
+Valor c: 12
+
+Valor a: 5
+Valor b: 2
+Valor c: 15
+```
+
+### Operadores de Asignación en C++
+
+| Operadores | Significado                  | Ejemplos |
+| ---------- | ---------------------------- | -------- |
+| =          | Asignación                   | x = 5    |
+| +=         | Asignación Compuesto de Suma | x += 3   |
+
+Tambien existen operadores compuestos de:
+
+`+=`,`-=`,`*=`,`/=`,`%=`, entre varios más.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+  // Operadores de Asignacioon
+  // Operador = Para asignar un valor
+  int miNum = 10;
+  cout << "Valor miNum: " << miNum << endl;
+  miNum = 20;
+  cout << "Valor miNum: " << miNum << endl;
+
+  // Operadores de asignacion compuesto
+  // compuesto suma +=
+  miNum += 5; // miNum = miNum + 5;
+  cout << "Valor miNum: " << miNum << endl;
+  // compuesto resta -=
+  miNum -= 3; // miNum = miNum - 3;
+  cout << "Valor miNum: " << miNum << endl;
+  // compuesto Multiplicacion *=
+  miNum *= 2; // miNum = miNum * 2;
+  cout << "Valor miNum: " << miNum << endl;
+  // compuesto division /=
+  miNum /= 7; // miNum = miNum / 7;
+  cout << "Valor miNum: " << miNum << endl;
+  // compuesto modulo %=
+  miNum %= 2; // miNum = miNum % 2;
+  cout << "Valor miNum: " << miNum << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor miNum: 10
+Valor miNum: 20
+Valor miNum: 25
+Valor miNum: 22
+Valor miNum: 44
+Valor miNum: 6
+Valor miNum: 0
+```
+
+### Operadores de Comparación ó Relacionales en C++
+
+Son operadores que comparan dos variables o expresiones, y el resultado es una expresión booleana que puede ser verdadera (true) o falsa (false).
+
+#### Los operadores de comparación en C++ son
+
+| Operador | Significado       | Ejemplo |
+| -------- | ----------------- | ------- |
+| >        | Mayor que         | a > b   |
+| >=       | Mayor o igual que | a >= b  |
+| <        | Menor que         | a < b   |
+| <=       | Menor o igual que | a <= b  |
+| ==       | igual que         | a == b  |
+| !=       | Distinto que      | a != b  |
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Operadores Comparación o Relacionales
+  int a = 5, b = 6;
+  cout << "Valor a: " << a << endl;
+  cout << "Valor b: " << b << endl;
+  // Operador Igualdad ==
+  bool c = a == b;
+  cout << " a igual que b?: " << c << endl;
+
+  // Operador Distinto !=
+  c = a != b;
+  cout << " a distinto que b?: " << c << endl;
+
+  // Operador Mayor que
+  c = a > b;
+  cout << " a Mayor que b?: " << c << endl;
+
+  // Operador Mayor o igualdad que
+  c = a >= b;
+  cout << " a Mayor o igual que b?: " << c << endl;
+
+  // Operador Menor que
+  c = a < b;
+  cout << " a Menor que b?: " << c << endl;
+
+  // Operador menor o igual que
+  c = a <= b;
+  cout << " a Menor o Igual que b?: " << c << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor a: 5
+Valor b: 6
+ a igual que b?: 0
+ a distinto que b?: 1
+ a Mayor que b?: 0
+ a Mayor o igual que b?: 0
+ a Menor que b?: 1
+ a Menor o Igual que b?: 1
+```
+
+### Operadores Lógicos en C++
+
+Los operadores lógicos se utilizan para realizar operaciones booleanas. Los principales operadores lógicos son:
+
+| Operador     | Nombre     | Ejemplo                 | Resultado |
+| ------------ | ---------- | ----------------------- | --------- |
+| `&&`         | AND Lógico | `true && false`         | `false`   |
+| &#124;&#124; | OR Lógico  | true &#124;&#124; false | `true`    |
+| `!`          | NOT Lógico | `!true`                 | `false`   |
+
+#### Tabla de Verdad
+
+Muestra el comportamiento de los operadores lógicos:
+
+##### AND
+
+Regresa verdadero si ambos valores lógicos son verdaderos
+
+| A     | B     | A && B |
+| ----- | ----- | ------ |
+| true  | true  | true   |
+| true  | false | false  |
+| false | true  | false  |
+| false | false | false  |
+
+##### OR
+
+Regresa verdadero si cualquiera de los operadores es verdadero
+
+| A     | B     | A &#124;&#124; B |
+| ----- | ----- | ---------------- |
+| true  | true  | true             |
+| true  | false | true             |
+| false | true  | true             |
+| false | false | false            |
+
+##### NOT
+
+Inverte el resultado lógico true -> false o false -> true
+
+| A     | !A    |
+| ----- | ----- |
+| true  | false |
+| false | true  |
+
+---
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Operadores Logicos
+
+  bool a = true, b = false, c;
+  cout << "Valor a: " << a << endl;
+  cout << "Valor b: " << b << endl;
+  // Operador and (&&)
+  // Regresa verdadero si ambos operandos son verdaderos
+  c = a && b;
+  cout << "Resultado operador and: " << c << endl;
+
+  // Operador or (||)
+  // Regresa verdadero si cualquiera de los operandos es verdadero
+  c = a || b;
+  cout << "Resultado operador or: " << c << endl;
+
+  // Operador not (!)
+  // Invierte el valor original (true -> false, false -> true)
+  c = !a;
+  cout << "Resultado operador not: " << c << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor a: 1
+Valor b: 0
+Resultado operador and: 0
+Resultado operador or: 1
+Resultado operador not: 0
+```
+
+### Ejercicio Valor dentro de Rango en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Validar si un valor esta dentro de rango
+
+  const int MINIMO = 0, MAXIMO = 5;
+  // Solicitar un valor entre 0 y 5
+  int dato;
+  cout << "Proporciona una dato entre 0 y 5: ";
+  cin >> dato;
+  // Verificar si el dato esta dentro de rango
+  bool dentroRango = dato >= MINIMO && dato <= MAXIMO;
+  cout << "Valor dentro de rango?: " << dentroRango << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Proporciona una dato entre 0 y 5: 2
+Valor dentro de rango?: 1
+```
+
+### Ejercicio de Precedencia de Operadores en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Precedencia de Operadores en C
+  // 1. Parentesis y Corchetes
+  // 2. Operadores unarios, como -, ++, --, !
+  // 3. Aritmeticos *, / y %
+  // 4. Aritmeticos + y -
+  // 5. Relacionales <, <=, > y >=
+  // 6. Igualdad/distinto == y !=
+  // 7. Logicos && y ||
+  // 8. Asignacion =, +=, -=, *=, etc.
+
+  // Ejemplo: Se revisa de izquierda a derecha
+  // int a = 12 / (3 + 2) * 3 - 1;
+  int a = 12 / 3 + 2 * 3 - 1;
+  cout << "Resultado: " << a << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Resultado: 9
+```
+
+---
