@@ -36,6 +36,14 @@
         - [NOT](#not)
     - [Ejercicio Valor dentro de Rango en C++](#ejercicio-valor-dentro-de-rango-en-c)
     - [Ejercicio de Precedencia de Operadores en C++](#ejercicio-de-precedencia-de-operadores-en-c)
+  - [Sentencia en C++](#sentencia-en-c)
+    - [Sentencia if en C++](#sentencia-if-en-c)
+    - [Sentencia if-else en C++](#sentencia-if-else-en-c)
+    - [Sentencia if - else if - else en C++](#sentencia-if---else-if---else-en-c)
+    - [Operador ternario en C++](#operador-ternario-en-c)
+    - [Ejercicio Propuesto: Mayor de Edad](#ejercicio-propuesto-mayor-de-edad)
+    - [Ejercicio Día de la Semana en C++](#ejercicio-día-de-la-semana-en-c)
+    - [Sentencia switch en C++](#sentencia-switch-en-c)
 
 ---
 
@@ -83,9 +91,9 @@ A[Entrada] -->B[Función] --> C[Salida]
 ### Hola Mundo en C++
 
 ```cpp
-#include <iostream> // Libreria para la entrada y salida estandar
+#include <iostream> // Librería para la entrada y salida estándar
 // namespace = espacio de nombres
-using namespace std; // Usaermos objetos y funciones del namespace
+using namespace std; // Usaremos objetos y funciones del namespace
 
 // int -> Tipo de regreso
 // main -> nombre  función principal
@@ -138,7 +146,7 @@ Una variable nos permite almacenar los datos de nuestros programas.
 #### Visualización de la Memoria
 
 ```cpp
-int miVariable = 10; // Un valor tipo int 0 cupa 4 bytes. -> 0x333 -> Memoria Stack
+int miVariable = 10; // Un valor tipo int 0 ocupa 4 bytes. -> 0x333 -> Memoria Stack
 // ...
 // ...
 miVariable = 20; // un valor -> 0x334 -> Memoria Stack
@@ -151,7 +159,7 @@ miVariable = 20; // un valor -> 0x334 -> Memoria Stack
 | `int`          | Entero                           | 10, -8, etc (4 bytes)    |
 | `float`        | Real                             | 3.5, -6.9, etc (4 bytes) |
 | `double`       | Real con más precisión que float | 3e39 (8 bytes)           |
-| `char`         | Caracter                         | 'A' (1 byte)             |
+| `char`         | Carácter                         | 'A' (1 byte)             |
 | `bool`         | Lógico o Booleano                | true o false (1 byte)    |
 
 ### Ejemplo de Variables en C++
@@ -279,7 +287,7 @@ int main()
 // Tipo chair
   char caracter = 'A';
   cout << "Caracter: " << caracter << endl;
-  char caracterDecimal = 65; // A -> Ascii
+  char caracterDecimal = 65; // A -> ASCII
   cout << "Caracter en Decimal: " << caracterDecimal << endl;
   // Tipo bool
   bool booleano = false; // true-1 o false-0
@@ -415,12 +423,12 @@ using namespace std;
 
 int main()
 {
-  // Solucion Ejercicio Tipos de Datos
+  // Solución Ejercicio Tipos de Datos
   string nombreCompleto;
   int edad;
   float sueldo;
   bool empleadoConfianza;
-  // Lee la informacion de la consola
+  // Lee la información de la consola
   cout << "Proporciona tu nombre: ";
   getline(cin, nombreCompleto);
   cout << "Proporciona tu edad: ";
@@ -953,3 +961,342 @@ Resultado: 9
 ```
 
 ---
+
+## Sentencia en C++
+
+### Sentencia if en C++
+
+```cpp
+if(condicion_booleana) {
+  // instrucciones  ...
+}
+```
+
+**Diagrama Flujo:**
+
+![alt text](image.png)
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Sentencia if
+  // Revisa si el valor proporcionado es positivo
+
+  int numero = 10;
+
+  // Verificar si es positivo
+  if (numero > 0)
+  {
+    cout << "Valor positivo: " << numero << endl;
+  }
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor positivo: 10
+```
+
+### Sentencia if-else en C++
+
+**Sintáxis:**
+
+```cpp
+if (condicion) {
+  // instrucciones..
+} else {
+  // instrucciones..
+}
+```
+
+**Diagrama Flujo:**
+
+![alt text](image-1.png)
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Sentencia if else
+  // Revisa si el valor proporcionado es positivo
+
+  int numero = 10;
+
+  // Verificar si es positivo
+  if (numero > 0)
+  {
+    cout << "Valor positivo: " << numero << endl;
+  }
+  else
+  {
+    cout << "Valor Cero o Negativo: " << numero << endl;
+  }
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor positivo: 10
+```
+
+### Sentencia if - else if - else en C++
+
+```cpp
+if (condicion) {
+  // instrucciones..
+} else if (nueva condicion) {
+  // instrucciones..
+} else {
+  // instrucciones..
+}
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Sentencia if else
+  // Revisa si el valor proporcionado es positivo
+
+  int numero = 10;
+
+  // Verificar si es positivo
+  if (numero > 0)
+  {
+    cout << "Valor positivo: " << numero << endl;
+  }
+  else if (numero < 0)
+  {
+    cout << "Valor Negativo: " << numero << endl;
+  }
+  else
+  {
+    cout << "Valor Cero: " << numero << endl;
+  }
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor positivo: 10
+```
+
+### Operador ternario en C++
+
+Es una simplificación de la sentencia
+if/else.
+
+**Sintaxis:**
+
+```cpp
+if (condicion) {
+  // instrucciones..
+} else {
+  // instrucciones..
+}
+```
+
+**Sintaxis Operador Ternario:**
+
+```cpp
+(condicion) ? caso verdadero : caso falso;
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Sentencia if else
+  // Revisa si el valor proporcionado es positivo
+
+  int numero = 10;
+
+  // Verificar con operador ternario
+  cout << "Valor ";
+  (numero > 0) ? cout << "Positivo" : cout << "Cero o Negativo";
+  cout << ": " << numero << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor Positivo: 10
+```
+
+### Ejercicio Propuesto: Mayor de Edad
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Mayor de edad
+  int edad;
+  bool MAYOR = edad >= 18;
+  cout << "Proporciona tu edad: ";
+  cin >> edad;
+
+  if (MAYOR)
+    cout << "La persona con edad " << edad << " es un adulto" << endl;
+  else if ((!MAYOR) && edad > 0)
+    cout << "La persona con edad " << edad << " es un menor de edad" << endl;
+  else
+    cout << "Ingresaste es invalido" << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Proporciona tu edad: -2
+Ingresaste es invalido
+```
+
+### Ejercicio Día de la Semana en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Mayor de edad
+  int diaSemana;
+  cout << "Proporciona un numero de dia de la semana: ";
+  cin >> diaSemana;
+
+  if (diaSemana == 1)
+    cout << "Lunes" << endl;
+  else if (diaSemana == 2)
+    cout << "Martes" << endl;
+  else if (diaSemana == 3)
+    cout << "Miercoles" << endl;
+  else if (diaSemana == 4)
+    cout << "Jueves" << endl;
+  else if (diaSemana == 5)
+    cout << "Viernes" << endl;
+  else if (diaSemana == 6)
+    cout << "Sabado" << endl;
+  else if (diaSemana == 7)
+    cout << "Domingo" << endl;
+  else
+    cout << "Ingresaste es invalido" << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Proporciona un numero de dia de la semana: 5
+Viernes
+```
+
+### Sentencia switch en C++
+
+**Sintaxis if-else:**
+
+```cpp
+if (condicion1) {
+  // instrucciones..
+} else if (condicion2) {
+  // instrucciones..
+} else if (condicion3) {
+  // instrucciones..
+} else {
+  // instrucciones..
+}
+```
+
+**Sintaxis switch:**
+
+```cpp
+switch(valor_a_evaluar) {
+  case 1:
+    // instrucciones..
+    break;
+  case 2:
+    // instrucciones..
+    break;
+  case 3:
+    // instrucciones..
+    break;
+  default:
+    // invierte las instrucciones..
+}
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Mayor de edad
+  int diaSemana;
+  cout << "Proporciona un numero de dia de la semana: ";
+  cin >> diaSemana;
+
+  switch (diaSemana)
+  {
+  case 1:
+    cout << "Lunes" << endl;
+    break;
+  case 2:
+    cout << "Martes" << endl;
+    break;
+  case 3:
+    cout << "Miercoles" << endl;
+    break;
+  case 4:
+    cout << "Jueves" << endl;
+    break;
+  case 5:
+    cout << "Viernes" << endl;
+    break;
+  case 6:
+    cout << "Sabado" << endl;
+    break;
+  case 7:
+    cout << "Domingo" << endl;
+    break;
+  default:
+    cout << "Ingresaste es invalido" << endl;
+  }
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Proporciona un numero de dia de la semana: 5
+Viernes
+```
+
+
