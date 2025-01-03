@@ -58,6 +58,15 @@
     - [Copia de la Referencia de Memoria (Apuntadores)](#copia-de-la-referencia-de-memoria-apuntadores)
     - [Ejercicio de Apuntadores](#ejercicio-de-apuntadores)
     - [Uso de Apuntadores](#uso-de-apuntadores)
+  - [Arreglos En C++](#arreglos-en-c)
+    - [Uso de Arreglos](#uso-de-arreglos)
+    - [Modificación de los valores de un arreglo](#modificación-de-los-valores-de-un-arreglo)
+    - [Lectura de los valores de un arreglo](#lectura-de-los-valores-de-un-arreglo)
+    - [Ejemplo de Arreglos](#ejemplo-de-arreglos)
+    - [Sintaxis Simplificada de Arreglos](#sintaxis-simplificada-de-arreglos)
+    - [Iterar los Elementos de un Arreglo](#iterar-los-elementos-de-un-arreglo)
+    - [Arreglos y Apuntadores](#arreglos-y-apuntadores)
+    - [Introducir Valores a un Arreglo](#introducir-valores-a-un-arreglo)
 
 ---
 
@@ -1714,3 +1723,285 @@ Nuevo valor desde 'a': 20
 Nuevo valor apuntador desde '*b': 20
 ```
 
+## Arreglos En C++
+
+Un arreglo nos permite almacenar múltiples valores en una sola variable, en lugar de definir varias variables.
+
+### Uso de Arreglos
+
+**Sintaxis:**
+
+`<tipo_dato> <nombre_arreglo>[tamañoArreglo (valor opcional)];`
+
+**Ejemplo:** `int numerosArreglo[5];`
+
+En memoria se crea un arreglo:
+
+![alt text](image-2.png)
+
+### Modificación de los valores de un arreglo
+
+```cpp
+int numerosArreglo[5];
+// Modificacion valores
+numerosArreglo[0] = 10; // Indice: 0, valor: 10
+numerosArreglo[4] = 50; // Indice: 4, valor: 50
+```
+
+| 0   | 1   | 2   | 3   | 4   |
+| --- | --- | --- | --- | --- |
+| 10  | ?   | ?   | ?   | 50  |
+
+No es necesario modificar todos los valores del arreglo
+
+### Lectura de los valores de un arreglo
+
+```cpp
+int numerosArreglo[5];
+// Modificamos algunos valores
+numerosArreglo[0] = 10; // Indice: 0, valor: 10
+numerosArreglo[4] = 50; // Indice: 4, valor: 50
+// Leemos los valores del arreglo
+cout << numberosArreglo[0]; // -> Imprime: 10
+cout << numberosArreglo[1]; // -> Imprime: ? (valor basura)
+cout << numberosArreglo[4]; // -> Imprime: 50
+```
+
+| 0   | 1   | 2   | 3   | 4   |
+| --- | --- | --- | --- | --- |
+| 10  | ?   | ?   | ?   | 50  |
+
+No es necesario modificar todos los valores del arreglo
+
+### Ejemplo de Arreglos
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Arreglos
+  // 1. Declarar
+  int numerosArreglo[5];
+  // 2. Modificar los elementos de un arreglo
+  numerosArreglo[0] = 13;
+  numerosArreglo[1] = 21;
+  numerosArreglo[4] = 82;
+
+  // 3. Imprimir los valores de arreglo
+
+  cout << "Elemento 1 - arrelo[0]: " << numerosArreglo[0] << endl;
+  cout << "Elemento 2 - arrelo[1]: " << numerosArreglo[1] << endl;
+  cout << "Elemento 3 - arrelo[2]: " << numerosArreglo[2] << endl;
+  cout << "Elemento 4 - arrelo[3]: " << numerosArreglo[3] << endl;
+  cout << "Elemento 5 - arrelo[4]: " << numerosArreglo[4] << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Elemento 1 - arrelo[0]: 13
+Elemento 2 - arrelo[1]: 21
+Elemento 3 - arrelo[2]: 145
+Elemento 4 - arrelo[3]: 0
+Elemento 5 - arrelo[4]: 82
+```
+
+### Sintaxis Simplificada de Arreglos
+
+```cpp
+//              Posición  0   1   2   3   4
+int numerosArreglos[] = {100,200,300,400,500};
+// [] -> No se especifica la cantidad de elementos
+```
+
+**En  memoria:**
+
+| **Indice:** | 0   | 1   | 2   | 3   | 4   |
+| ----------- | --- | --- | --- | --- | --- |
+| **Valor:**  | 100 | 200 | 300 | 400 | 500 |
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Arreglos
+  // 1. Declarar
+  int numerosArreglo[] = {100, 200, 300, 400, 500};
+
+  // 2. Imprimir los valores de arreglo
+
+  cout << "Elemento 1 - arrelo[0]: " << numerosArreglo[0] << endl;
+  cout << "Elemento 2 - arrelo[1]: " << numerosArreglo[1] << endl;
+  cout << "Elemento 3 - arrelo[2]: " << numerosArreglo[2] << endl;
+  cout << "Elemento 4 - arrelo[3]: " << numerosArreglo[3] << endl;
+  cout << "Elemento 5 - arrelo[4]: " << numerosArreglo[4] << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Elemento 1 - arrelo[0]: 100
+Elemento 2 - arrelo[1]: 200
+Elemento 3 - arrelo[2]: 300
+Elemento 4 - arrelo[3]: 400
+Elemento 5 - arrelo[4]: 500
+```
+
+### Iterar los Elementos de un Arreglo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Arreglos
+  // 1. Sintaxis simplificada arreglos
+  int numeros[] = {100, 200, 300, 400, 500};
+
+  int elementosArreglo = sizeof(numeros);
+  int unElementoArreglo = sizeof(numeros[0]);
+  int largoArreglo = elementosArreglo / unElementoArreglo;
+
+  cout << "Cantidad de bytes del arreglo: " << elementosArreglo << endl;
+  cout << "Cantidad de bytes de un elemento: " << unElementoArreglo << endl;
+  cout << "Cantidad de elementos arreglo: " << largoArreglo << endl;
+
+  cout << "Iteramos el arreglo:" << endl;
+  for (int i = 0; i < largoArreglo; i++)
+  {
+    cout << "Elemento " << i + 1 << " - arrelo[" << i << "]: " << numeros[i] << endl;
+  }
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Cantidad de bytes del arreglo: 20
+Cantidad de bytes de un elemento: 4
+Cantidad de elementos arreglo: 5
+Iteramos el arreglo:
+Elemento 1 - arrelo[0]: 100
+Elemento 2 - arrelo[1]: 200
+Elemento 3 - arrelo[2]: 300
+Elemento 4 - arrelo[3]: 400
+Elemento 5 - arrelo[4]: 500
+```
+
+### Arreglos y Apuntadores
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Arreglos
+  // 1. Sintaxis definir arreglos con apuntadores
+  int largoArreglo = 5;
+  // int numeros[largoArreglo];
+  // Apuntadores
+  int *numeros = new int[largoArreglo];
+
+  // Inicializamos los valores
+  numeros[0] = 100;
+  numeros[1] = 200;
+  numeros[2] = 300;
+  numeros[3] = 400;
+  numeros[4] = 500;
+
+  // Accedemos a los elementos con iterador
+
+  for (int i = 0; i < largoArreglo; i++)
+  {
+    cout << "elemento " << i + 1 << " - arreglo[" << i << "] = " << numeros[i] << endl;
+  }
+
+  // Eliminar el arreglo de la memoria
+  delete[] numeros;
+
+  cout << "Eliminar un arreglo de la memoria: " << numeros << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+elemento 1 - arreglo[0] = 100
+elemento 2 - arreglo[1] = 200
+elemento 3 - arreglo[2] = 300
+elemento 4 - arreglo[3] = 400
+elemento 5 - arreglo[4] = 500
+Eliminar un arreglo de la memoria: 0x172
+```
+
+### Introducir Valores a un Arreglo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Introducir valores a un arreglo
+
+  // Declara arreglo
+  cout << "Proporciona el largo de arreglo: ";
+  int largoArreglo;
+  cin >> largoArreglo;
+
+  // Sintaxis apuntadores-arreglo
+  int *numeros = new int[largoArreglo];
+
+  // Solicitar los elementos al usuario
+  for (int i = 0; i < largoArreglo; i++)
+  {
+    cout << "Proporciona el valor [" << i << "]" << ": ";
+    cin >> numeros[i];
+  }
+
+  // Imprimimos los valores del arreglo
+  cout << endl
+       << "Mostramos los valores almacenados: " << endl;
+  for (int i = 0; i < largoArreglo; i++)
+  {
+    cout << "Elemento[" << i << "]" << " = " << numeros[i] << endl;
+  }
+
+  // Eliminar el arreglo de la memoria
+  delete[] numeros;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Proporciona el largo de arreglo: 4
+Proporciona el valor [0]: 100
+Proporciona el valor [1]: 200
+Proporciona el valor [2]: 300
+Proporciona el valor [3]: 400
+
+Mostramos los valores almacenados:
+Elemento[0] = 100
+Elemento[1] = 200
+Elemento[2] = 300
+Elemento[3] = 400
+```
