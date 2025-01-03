@@ -44,6 +44,15 @@
     - [Ejercicio Propuesto: Mayor de Edad](#ejercicio-propuesto-mayor-de-edad)
     - [Ejercicio Día de la Semana en C++](#ejercicio-día-de-la-semana-en-c)
     - [Sentencia switch en C++](#sentencia-switch-en-c)
+  - [Ciclos en C++](#ciclos-en-c)
+    - [Tipos de Ciclos](#tipos-de-ciclos)
+    - [Ciclo `while`](#ciclo-while)
+    - [Ciclo `do while`](#ciclo-do-while)
+    - [Ejercicio ciclo `do while` en C++](#ejercicio-ciclo-do-while-en-c)
+    - [Ciclo `for`](#ciclo-for)
+    - [Incremento y Decremento de 3 en 3 con ciclo `for`](#incremento-y-decremento-de-3-en-3-con-ciclo-for)
+    - [Ejercicio Suma Acumulativa for en C++](#ejercicio-suma-acumulativa-for-en-c)
+    - [Ejercicio Suma Acumulativa while y do-while en C++](#ejercicio-suma-acumulativa-while-y-do-while-en-c)
 
 ---
 
@@ -1299,4 +1308,296 @@ Proporciona un numero de dia de la semana: 5
 Viernes
 ```
 
+## Ciclos en C++
 
+Un ciclo nos permite repetir un bloque de código mientras la condición sea verdadera.
+
+### Tipos de Ciclos
+
+- Ciclo `while`
+- Ciclo `do while`
+- Ciclo `for`
+
+### Ciclo `while`
+
+**Sintaxis:**
+
+```cpp
+while(condicion) {
+  // Instrucciones...
+}
+```
+
+- La condición es una valor lógico (`true`/`false`).
+- El ciclo `while` repite la ejecución del bloque de código mientras la condición sea verdadera (`true`).
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Ciclo while
+  // Imprimir 1 al 5
+  int contado = 1, maximo = 5;
+  while (contado <= maximo)
+  {
+    cout << contado++ << endl;
+  }
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+1
+2
+3
+4
+5
+```
+
+### Ciclo `do while`
+
+**Sintaxis:**
+
+```cpp
+do {
+  // Instrucciones...
+} while(condicion);
+```
+
+- El ciclo `do while` ejecuta al menor una vez su bloque de código debido a que la condición a revisar sse encuentra al final del bloque.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Ciclo do while
+  // Solicitamos un valor positivo
+  int numero;
+  do
+  {
+    cout << "Proporciona un valor positivo: ";
+    cin >> numero;
+  } while (numero <= 0);
+  cout << "Valor positivo: " << numero << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Proporciona un valor positivo: -1
+Proporciona un valor positivo: 0
+Proporciona un valor positivo: 5
+Valor positivo: 5
+```
+
+### Ejercicio ciclo `do while` en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Ciclo do while
+  // Imprimir 1 al 5
+  int contado = 1, maximo = 5;
+  do
+  {
+    cout << contado++ << endl;
+  } while (contado <= maximo);
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+1
+2
+3
+4
+5
+```
+
+### Ciclo `for`
+
+- Con ciclo `for` especificamos cuantas veces queremos repetir su bloque de código.
+
+**Sintaxis:**
+
+```cpp
+for (/*(1). declaracion variables*/;/* (2). condicion evaluar*/;/*(4). incremeto o decremento*/){
+  // (3). Instrucciones...
+}
+```
+
+1. Se ejecuta solo una vez al inicio de la ejecución del ciclo `for`.
+2. Se repite el ciclo mientras la condición sea verdadera.
+3. Se ejecuta el bloque de código.
+4. Se incremento o decremento los contadores
+
+Se repiten los pasos 2, 3 y 4 mientras la condición sea verdadera.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Ciclo for
+  // Imprimir 1 al 5
+  int maximo = 5;
+  for (int contador = 1; contador <= maximo; contador++)
+  {
+    cout << contador << endl;
+  }
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+1
+2
+3
+4
+5
+```
+
+### Incremento y Decremento de 3 en 3 con ciclo `for`
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Ciclo for
+  // Incremento y Decremento de 3 en 3 con ciclo for
+  cout << "Incremento de 3 en 3 (tope 10):" << endl;
+  for (int i = 1; i <= 10; i += 3)
+  {
+    cout << i << " ";
+  }
+  cout << endl;
+
+  cout << "Decremento de 3 en 3 (tope -10):" << endl;
+  for (int i = 1; i >= -10; i -= 3)
+  {
+    cout << i << " ";
+  }
+  cout << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Incremento de 3 en 3 (tope 10):
+1 4 7 10
+Decremento de 3 en 3 (tope -10):
+1 -2 -5 -8
+```
+
+### Ejercicio Suma Acumulativa for en C++
+
+Realizar la suma de los primeros 5 números utilizando un ciclo `for`:
+
+**Ejemplo:**
+1 + 2 + 3 + 4 + 5 = 15
+  3   +   7   + 5
+      10      + 5
+          15
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Ciclo for
+  // Suma Acumulativa
+  int contador = 0;
+  cout << "Suma Acumulativa:" << endl;
+  for (int i = 1; i <= 5; i++)
+  {
+    contador += i;
+    cout << i;
+    (contador == 15) ? cout << " = " << contador : cout << " + ";
+  }
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Suma Acumulativa:
+1 + 2 + 3 + 4 + 5 = 15
+```
+
+### Ejercicio Suma Acumulativa while y do-while en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Ciclo while
+  // Suma Acumulativa
+  int contador = 0, i = 0;
+  cout << "Usa 'while'" << endl;
+  cout << "Suma Acumulativa:" << endl;
+  while (i <= 5)
+  {
+    contador += i;
+    cout << i;
+    (contador == 15) ? cout << " = " << contador : cout << " + ";
+    i++;
+  }
+
+  cout << endl
+       << "Usa 'do while'" << endl;
+  // Ciclo do while
+  // Suma Acumulativa
+  contador = 0, i = 0;
+  cout << "Suma Acumulativa:" << endl;
+  do
+  {
+    contador += i;
+    cout << i;
+    (contador == 15) ? cout << " = " << contador : cout << " + ";
+    i++;
+  } while (i <= 5);
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Usa 'while'
+Suma Acumulativa:
+0 + 1 + 2 + 3 + 4 + 5 = 15
+Usa 'do while'
+Suma Acumulativa:
+0 + 1 + 2 + 3 + 4 + 5 = 15
+```
