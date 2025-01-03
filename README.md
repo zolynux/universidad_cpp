@@ -53,6 +53,11 @@
     - [Incremento y Decremento de 3 en 3 con ciclo `for`](#incremento-y-decremento-de-3-en-3-con-ciclo-for)
     - [Ejercicio Suma Acumulativa for en C++](#ejercicio-suma-acumulativa-for-en-c)
     - [Ejercicio Suma Acumulativa while y do-while en C++](#ejercicio-suma-acumulativa-while-y-do-while-en-c)
+  - [Apuntadores en C++](#apuntadores-en-c)
+    - [Copia de Valores](#copia-de-valores)
+    - [Copia de la Referencia de Memoria (Apuntadores)](#copia-de-la-referencia-de-memoria-apuntadores)
+    - [Ejercicio de Apuntadores](#ejercicio-de-apuntadores)
+    - [Uso de Apuntadores](#uso-de-apuntadores)
 
 ---
 
@@ -1601,3 +1606,111 @@ Usa 'do while'
 Suma Acumulativa:
 0 + 1 + 2 + 3 + 4 + 5 = 15
 ```
+
+## Apuntadores en C++
+
+Un puntero es una variable que almacena la dirección de memoria de un objeto.
+
+### Copia de Valores
+
+```cpp
+// Definimos variables
+int a = 10; // paso 1
+int b = a; // paso 2
+b = 20; // paso 3
+```
+
+**En memoria:**
+
+| Paso | Variable | Valor     | Memoria Stack | Significado                                       |
+| ---- | -------- | --------- | ------------- | ------------------------------------------------- |
+| 1    | a        | 10        | 0x333         | Crea una variable 'a' al valor 10                 |
+| 2    | b        | a=10      | 0x333         | Se copia el valor de 'a' a la variable 'b'        |
+| 3    | b        | ~~10~~ 20 | 0x444         | Sólo se modifica el valor de 'b', no afecta a 'a' |
+
+### Copia de la Referencia de Memoria (Apuntadores)
+
+```cpp
+// variables
+int a = 10; // Paso 1
+int *b = &a; // Paso 2
+
+cout << a; // Imprime -> 10
+cout << *b; // Imprime -> 10
+cout << b; // Imprime -> 0x333
+// Modificamos el valor de la variable
+*b = 20; // Paso 3
+cout << a; // Imprime -> 20
+cout << *b; // Imprime -> 20
+```
+
+
+| Paso | Variable | Valor     | Memoria Stack | Significado                                                                       |
+| ---- | -------- | --------- | ------------- | --------------------------------------------------------------------------------- |
+| 1    | a        | 10        | 0x333         | Crea una variable 'a' del valor 10                                                |
+| 2    | *b       | &a        | 0x333         | Un cambio en la dirección de memoria a 'a', 'b' es un apuntador a la variable 'a' |
+| 3    | *b       | ~~10~~ 20 | 0x444         | Sólo se modifica el valor de 'b', si afecta a 'a'                                 |
+
+### Ejercicio de Apuntadores
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Apuntadores (referencia de memoria)
+  int a = 10;
+  // Definimos un apuntador
+  int *b = &a;
+  // Imprimir la direccion de memoria
+  cout << "Direccion memoria '&a': " << &a << endl;
+  cout << "Direccion memoria a la que apunta 'b': " << b << endl;
+  cout << "Desreferencia '*b': " << *b << endl;
+  cout << "Valor 'a': " << a << endl;
+  cout << "Direccion memoria del apuntador '&b': " << &b << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Direccion memoria '&a': 0x6f56c
+Direccion memoria a la que apunta 'b': 0x6f56c
+Desreferencia '*b': 10
+Valor 'a': 10
+Direccion memoria del apuntador '&b': 0x6f560
+```
+
+### Uso de Apuntadores
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Apuntadores (referencia de memoria)
+  int a = 10;
+  // Definimos un apuntador
+  int *b = &a;
+
+  // Modificar el valor de 'a', pero con el uso del apuntador
+  // Desreferencia para acceder al valor de la memoria a la que apuntamos
+  *b = 20;
+  cout << "Nuevo valor desde 'a': " << a << endl;
+  cout << "Nuevo valor apuntador desde '*b': " << *b << endl;
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Nuevo valor desde 'a': 20
+Nuevo valor apuntador desde '*b': 20
+```
+
