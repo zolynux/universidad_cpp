@@ -67,6 +67,16 @@
     - [Iterar los Elementos de un Arreglo](#iterar-los-elementos-de-un-arreglo)
     - [Arreglos y Apuntadores](#arreglos-y-apuntadores)
     - [Introducir Valores a un Arreglo](#introducir-valores-a-un-arreglo)
+  - [Matrices](#matrices)
+    - [Uso de Matrices](#uso-de-matrices)
+    - [Modificación Valores de una matriz](#modificación-valores-de-una-matriz)
+    - [Leer los valores de una Matriz](#leer-los-valores-de-una-matriz)
+    - [Ejemplo de Matrices](#ejemplo-de-matrices)
+    - [Sintaxis Simplificada de Matrices](#sintaxis-simplificada-de-matrices)
+    - [ITerar una Matriz](#iterar-una-matriz)
+    - [Ejemplo Iterar una Matriz](#ejemplo-iterar-una-matriz)
+    - [Matrices y Apuntadores](#matrices-y-apuntadores)
+    - [Introducir Datos en una Matriz](#introducir-datos-en-una-matriz)
 
 ---
 
@@ -113,7 +123,7 @@ A[Entrada] -->B[Función] --> C[Salida]
 
 ### Hola Mundo en C++
 
-```cpp
+```c++
 #include <iostream> // Librería para la entrada y salida estándar
 // namespace = espacio de nombres
 using namespace std; // Usaremos objetos y funciones del namespace
@@ -131,7 +141,7 @@ int main() {
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Hola Mundo en C++
 ```
 
@@ -168,7 +178,7 @@ Una variable nos permite almacenar los datos de nuestros programas.
 
 #### Visualización de la Memoria
 
-```cpp
+```c++
 int miVariable = 10; // Un valor tipo int 0 ocupa 4 bytes. -> 0x333 -> Memoria Stack
 // ...
 // ...
@@ -187,7 +197,7 @@ miVariable = 20; // un valor -> 0x334 -> Memoria Stack
 
 ### Ejemplo de Variables en C++
 
-```cpp
+```c++
 #include <iostream>
 
 using namespace std;
@@ -209,14 +219,14 @@ int main() {
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Entero: 10
 Flotante: 7.9
 ```
 
 ### Ejemplo de Tipos de Datos en C++
 
-```cpp
+```c++
 #include <iostream>
 #include <iomanip> // Input-Output-manipulation
 
@@ -251,7 +261,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Entero: 10
 Flotante: 8.90
 Doble: 10.00
@@ -262,7 +272,7 @@ Booleano: 0
 
 ### Cadena en C++
 
-```cpp
+```c++
 #include <iostream>
 #include <iomanip> // Input-Output-manipulation
 
@@ -281,13 +291,13 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Cadena: Hola
 ```
 
 ### Modo Debug en C++
 
-```cpp
+```c++
 #include <iostream>
 #include <iomanip> // Input-Output-manipulation
 
@@ -326,7 +336,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Entero: 10
 Flotante: 8.90
 Doble: 10.00
@@ -346,7 +356,7 @@ Obtener dirección memoria:
 
 **Ejemplo:** `cout << "Dir. memoria: " << &miNumero;` --> Imprime 0x333
 
-```cpp
+```c++
 #include <iostream>
 #include <iomanip> // Input-Output-manipulation
 
@@ -368,14 +378,14 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Entero: 10
 Dir. memoria: 0x821b1ff86c
 ```
 
 ### Introducir Datos por Consola en C++
 
-```cpp
+```c++
 #include <iostream>
 
 using namespace std;
@@ -398,14 +408,14 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona un numero: 20
 Valor proporcionado: 20
 ```
 
 ### Introducir una Cadena en C++
 
-```cpp
+```c++
 #include <iostream>
 
 using namespace std;
@@ -431,14 +441,14 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona tu nombre: Zolyn UX
 Nombre proporcionado: Zolyn UX
 ```
 
 ### Ejercicio Propuesto: Tipo de Datos en C++
 
-```cpp
+```c++
 #include <iostream>
 #include <iomanip>
 
@@ -474,7 +484,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona tu nombre: David UX
 Proporciona tu edad: 32
 Proporciona tu sueldo (USD): 450.3
@@ -496,7 +506,7 @@ Empleado de confianza: 1
 
 Una vez definido el valor de una constante, ya que no podemos modificarlo.
 
-```cpp
+```c++
 #include <iostream>
 #include <cmath>
 // Use math defines
@@ -521,7 +531,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Mi constante: 100
 Constante PI: 3.1416
 Constante Matematica PI: 3.14159
@@ -529,7 +539,7 @@ Constante Matematica PI: 3.14159
 
 ### Tamaño en Bytes de los Tipos de Datos en C++
 
-```cpp
+```c++
 #include <iostream>
 
 using namespace std;
@@ -558,7 +568,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 int tamanio bytes: 4
 float tamanio bytes: 4
 double tamanio bytes: 8
@@ -595,7 +605,7 @@ Los operadores nos permiten realizar operaciones al usar valores y variables.
 
 ---
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -627,7 +637,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Suma: 7
 Resta: 4
 Multiplicacion: 14
@@ -637,7 +647,7 @@ Modulo: 1
 
 ### Operadores de Incremento/Decremento en C++
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -666,7 +676,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Nuevo valor a (++a): 1
 Nuevo valor a (a++): 2
 Nuevo valor a (--a): 1
@@ -675,7 +685,7 @@ Nuevo valor a (a--): 0
 
 ### Ejercicio Operadores de Incremento y Decremento en C++
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -699,7 +709,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Valor a: 6
 Valor b: 3
 Valor c: 12
@@ -720,7 +730,7 @@ Tambien existen operadores compuestos de:
 
 `+=`,`-=`,`*=`,`/=`,`%=`, entre varios más.
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -757,7 +767,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Valor miNum: 10
 Valor miNum: 20
 Valor miNum: 25
@@ -782,7 +792,7 @@ Son operadores que comparan dos variables o expresiones, y el resultado es una e
 | ==       | igual que         | a == b  |
 | !=       | Distinto que      | a != b  |
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -822,7 +832,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Valor a: 5
 Valor b: 6
  a igual que b?: 0
@@ -880,7 +890,7 @@ Inverte el resultado lógico true -> false o false -> true
 
 ---
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -912,7 +922,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Valor a: 1
 Valor b: 0
 Resultado operador and: 0
@@ -922,7 +932,7 @@ Resultado operador not: 0
 
 ### Ejercicio Valor dentro de Rango en C++
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -945,14 +955,14 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona una dato entre 0 y 5: 2
 Valor dentro de rango?: 1
 ```
 
 ### Ejercicio de Precedencia de Operadores en C++
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -979,7 +989,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Resultado: 9
 ```
 
@@ -989,7 +999,7 @@ Resultado: 9
 
 ### Sentencia if en C++
 
-```cpp
+```c++
 if(condicion_booleana) {
   // instrucciones  ...
 }
@@ -999,7 +1009,7 @@ if(condicion_booleana) {
 
 ![alt text](image.png)
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1022,7 +1032,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Valor positivo: 10
 ```
 
@@ -1030,7 +1040,7 @@ Valor positivo: 10
 
 **Sintáxis:**
 
-```cpp
+```c++
 if (condicion) {
   // instrucciones..
 } else {
@@ -1042,7 +1052,7 @@ if (condicion) {
 
 ![alt text](image-1.png)
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1069,13 +1079,13 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Valor positivo: 10
 ```
 
 ### Sentencia if - else if - else en C++
 
-```cpp
+```c++
 if (condicion) {
   // instrucciones..
 } else if (nueva condicion) {
@@ -1085,7 +1095,7 @@ if (condicion) {
 }
 ```
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1116,7 +1126,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Valor positivo: 10
 ```
 
@@ -1127,7 +1137,7 @@ if/else.
 
 **Sintaxis:**
 
-```cpp
+```c++
 if (condicion) {
   // instrucciones..
 } else {
@@ -1137,11 +1147,11 @@ if (condicion) {
 
 **Sintaxis Operador Ternario:**
 
-```cpp
+```c++
 (condicion) ? caso verdadero : caso falso;
 ```
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1163,13 +1173,13 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Valor Positivo: 10
 ```
 
 ### Ejercicio Propuesto: Mayor de Edad
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1194,14 +1204,14 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona tu edad: -2
 Ingresaste es invalido
 ```
 
 ### Ejercicio Día de la Semana en C++
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1235,7 +1245,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona un numero de dia de la semana: 5
 Viernes
 ```
@@ -1244,7 +1254,7 @@ Viernes
 
 **Sintaxis if-else:**
 
-```cpp
+```c++
 if (condicion1) {
   // instrucciones..
 } else if (condicion2) {
@@ -1258,7 +1268,7 @@ if (condicion1) {
 
 **Sintaxis switch:**
 
-```cpp
+```c++
 switch(valor_a_evaluar) {
   case 1:
     // instrucciones..
@@ -1274,7 +1284,7 @@ switch(valor_a_evaluar) {
 }
 ```
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1317,7 +1327,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona un numero de dia de la semana: 5
 Viernes
 ```
@@ -1336,7 +1346,7 @@ Un ciclo nos permite repetir un bloque de código mientras la condición sea ver
 
 **Sintaxis:**
 
-```cpp
+```c++
 while(condicion) {
   // Instrucciones...
 }
@@ -1345,7 +1355,7 @@ while(condicion) {
 - La condición es una valor lógico (`true`/`false`).
 - El ciclo `while` repite la ejecución del bloque de código mientras la condición sea verdadera (`true`).
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1365,7 +1375,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 1
 2
 3
@@ -1377,7 +1387,7 @@ int main()
 
 **Sintaxis:**
 
-```cpp
+```c++
 do {
   // Instrucciones...
 } while(condicion);
@@ -1385,7 +1395,7 @@ do {
 
 - El ciclo `do while` ejecuta al menor una vez su bloque de código debido a que la condición a revisar sse encuentra al final del bloque.
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1407,7 +1417,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona un valor positivo: -1
 Proporciona un valor positivo: 0
 Proporciona un valor positivo: 5
@@ -1416,7 +1426,7 @@ Valor positivo: 5
 
 ### Ejercicio ciclo `do while` en C++
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1436,7 +1446,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 1
 2
 3
@@ -1450,7 +1460,7 @@ int main()
 
 **Sintaxis:**
 
-```cpp
+```c++
 for (/*(1). declaracion variables*/;/* (2). condicion evaluar*/;/*(4). incremeto o decremento*/){
   // (3). Instrucciones...
 }
@@ -1463,7 +1473,7 @@ for (/*(1). declaracion variables*/;/* (2). condicion evaluar*/;/*(4). incremeto
 
 Se repiten los pasos 2, 3 y 4 mientras la condición sea verdadera.
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1483,7 +1493,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 1
 2
 3
@@ -1493,7 +1503,7 @@ int main()
 
 ### Incremento y Decremento de 3 en 3 con ciclo `for`
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1521,7 +1531,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Incremento de 3 en 3 (tope 10):
 1 4 7 10
 Decremento de 3 en 3 (tope -10):
@@ -1538,7 +1548,7 @@ Realizar la suma de los primeros 5 números utilizando un ciclo `for`:
       10      + 5
           15
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1561,14 +1571,14 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Suma Acumulativa:
 1 + 2 + 3 + 4 + 5 = 15
 ```
 
 ### Ejercicio Suma Acumulativa while y do-while en C++
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1607,7 +1617,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Usa 'while'
 Suma Acumulativa:
 0 + 1 + 2 + 3 + 4 + 5 = 15
@@ -1622,7 +1632,7 @@ Un puntero es una variable que almacena la dirección de memoria de un objeto.
 
 ### Copia de Valores
 
-```cpp
+```c++
 // Definimos variables
 int a = 10; // paso 1
 int b = a; // paso 2
@@ -1639,7 +1649,7 @@ b = 20; // paso 3
 
 ### Copia de la Referencia de Memoria (Apuntadores)
 
-```cpp
+```c++
 // variables
 int a = 10; // Paso 1
 int *b = &a; // Paso 2
@@ -1653,7 +1663,6 @@ cout << a; // Imprime -> 20
 cout << *b; // Imprime -> 20
 ```
 
-
 | Paso | Variable | Valor     | Memoria Stack | Significado                                                                       |
 | ---- | -------- | --------- | ------------- | --------------------------------------------------------------------------------- |
 | 1    | a        | 10        | 0x333         | Crea una variable 'a' del valor 10                                                |
@@ -1662,7 +1671,7 @@ cout << *b; // Imprime -> 20
 
 ### Ejercicio de Apuntadores
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1685,7 +1694,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Direccion memoria '&a': 0x6f56c
 Direccion memoria a la que apunta 'b': 0x6f56c
 Desreferencia '*b': 10
@@ -1695,7 +1704,7 @@ Direccion memoria del apuntador '&b': 0x6f560
 
 ### Uso de Apuntadores
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1718,7 +1727,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Nuevo valor desde 'a': 20
 Nuevo valor apuntador desde '*b': 20
 ```
@@ -1741,9 +1750,9 @@ En memoria se crea un arreglo:
 
 ### Modificación de los valores de un arreglo
 
-```cpp
+```c++
 int numerosArreglo[5];
-// Modificacion valores
+// Modificación valores
 numerosArreglo[0] = 10; // Indice: 0, valor: 10
 numerosArreglo[4] = 50; // Indice: 4, valor: 50
 ```
@@ -1756,15 +1765,15 @@ No es necesario modificar todos los valores del arreglo
 
 ### Lectura de los valores de un arreglo
 
-```cpp
+```c++
 int numerosArreglo[5];
 // Modificamos algunos valores
 numerosArreglo[0] = 10; // Indice: 0, valor: 10
 numerosArreglo[4] = 50; // Indice: 4, valor: 50
 // Leemos los valores del arreglo
-cout << numberosArreglo[0]; // -> Imprime: 10
-cout << numberosArreglo[1]; // -> Imprime: ? (valor basura)
-cout << numberosArreglo[4]; // -> Imprime: 50
+cout << numerosArreglo[0]; // -> Imprime: 10
+cout << numerosArreglo[1]; // -> Imprime: ? (valor basura)
+cout << numerosArreglo[4]; // -> Imprime: 50
 ```
 
 | 0   | 1   | 2   | 3   | 4   |
@@ -1775,7 +1784,7 @@ No es necesario modificar todos los valores del arreglo
 
 ### Ejemplo de Arreglos
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1803,7 +1812,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Elemento 1 - arrelo[0]: 13
 Elemento 2 - arrelo[1]: 21
 Elemento 3 - arrelo[2]: 145
@@ -1813,7 +1822,7 @@ Elemento 5 - arrelo[4]: 82
 
 ### Sintaxis Simplificada de Arreglos
 
-```cpp
+```c++
 //              Posición  0   1   2   3   4
 int numerosArreglos[] = {100,200,300,400,500};
 // [] -> No se especifica la cantidad de elementos
@@ -1825,7 +1834,7 @@ int numerosArreglos[] = {100,200,300,400,500};
 | ----------- | --- | --- | --- | --- | --- |
 | **Valor:**  | 100 | 200 | 300 | 400 | 500 |
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1849,7 +1858,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Elemento 1 - arrelo[0]: 100
 Elemento 2 - arrelo[1]: 200
 Elemento 3 - arrelo[2]: 300
@@ -1859,7 +1868,7 @@ Elemento 5 - arrelo[4]: 500
 
 ### Iterar los Elementos de un Arreglo
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1889,7 +1898,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Cantidad de bytes del arreglo: 20
 Cantidad de bytes de un elemento: 4
 Cantidad de elementos arreglo: 5
@@ -1903,7 +1912,7 @@ Elemento 5 - arrelo[4]: 500
 
 ### Arreglos y Apuntadores
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1941,7 +1950,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 elemento 1 - arreglo[0] = 100
 elemento 2 - arreglo[1] = 200
 elemento 3 - arreglo[2] = 300
@@ -1952,7 +1961,7 @@ Eliminar un arreglo de la memoria: 0x172
 
 ### Introducir Valores a un Arreglo
 
-```cpp
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1992,7 +2001,7 @@ int main()
 
 **🟢 Ejecutar:**
 
-```plaintext
+```console
 Proporciona el largo de arreglo: 4
 Proporciona el valor [0]: 100
 Proporciona el valor [1]: 200
@@ -2004,4 +2013,281 @@ Elemento[0] = 100
 Elemento[1] = 200
 Elemento[2] = 300
 Elemento[3] = 400
+```
+
+## Matrices
+
+Una matriz es un arreglo de 2 dimenisones
+
+### Uso de Matrices
+
+**Sintaxis:**
+
+```c++
+<tipo_dato> <nombre_matriz>[renglones][columnas]; 
+```
+
+**Ejemplo:** `int matriz[2][3];`
+
+**En memoria se reversa:**
+
+![alt text](image-3.png)
+
+### Modificación Valores de una matriz
+
+```c++
+int matriz[2][3];
+// Modificación de valores
+matriz[0][0] = 100;
+matriz[1][2] = 600;
+```
+
+![alt text](image-4.png)
+
+> [!NOTE]
+> No es necesario modificar todos los valores de la matriz
+
+### Leer los valores de una Matriz
+
+```c++
+int matriz[2][3];
+// Modificamos algunos valores
+matriz[0][0] = 100;
+matriz[1][2] = 600;
+// Leemos los valores
+cout << matriz[0][0]; // -> 100
+cout << matriz[1][2]; // -> 100
+cout << matriz[0][1]; // -> ?
+```
+
+**En memoria:**
+
+![alt text](image-5.png)
+
+### Ejemplo de Matrices
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Definir una matriz de 2x3
+  const int RENGLONES = 2, COLUMNA = 3;
+  int matriz[RENGLONES][COLUMNA];
+  // Modificar la matriz
+  matriz[0][0] = 100;
+  matriz[0][1] = 200;
+  matriz[0][2] = 300;
+  matriz[1][0] = 400;
+  matriz[1][1] = 500;
+  matriz[1][2] = 600;
+  // Leer los valores
+  cout << "Elemento 1 [0][0] = " << matriz[0][0] << endl;
+  cout << "Elemento 2 [1][2] = " << matriz[1][2] << endl;
+}
+```
+
+```console
+Elemento 1 [0][0] = 100
+Elemento 2 [1][2] = 600
+```
+
+### Sintaxis Simplificada de Matrices
+
+```c++
+int matriz[2][3] = {
+  {100,200,300}, // -> Primer renglón
+  {400,500,600} // -> Segundo renglón
+};
+```
+
+**En memoria:**
+
+![alt text](image-6.png)
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Definir una matriz de 2x3
+  const int RENGLONES = 2, COLUMNA = 3;
+  int matriz[RENGLONES][COLUMNA] = {
+      {100, 200, 300}, // -> Primer renglón
+      {400, 500, 600}  // -> Segundo renglón
+  };
+
+  // Leer los valores
+  cout << "Elemento 1 [0][0] = " << matriz[0][0] << endl;
+  cout << "Elemento 2 [1][2] = " << matriz[1][2] << endl;
+}
+```
+
+```console
+Elemento 1 [0][0] = 100
+Elemento 2 [1][2] = 600
+```
+
+### ITerar una Matriz
+
+```c++
+  int matriz[2][3] = {{100, 200, 300}, {400, 500, 600}};
+```
+
+**En memoria:**
+
+![alt text](image-6.png)
+
+**Iteramos la matriz:**
+
+```c++
+for (int ren = 0; ren < 2; ren++) // Controla los renglones
+{
+  for (int col = 0; col < 3; col++) // Controla las columnas
+  {
+    cout << matriz[ren][col];
+  } // fin 'for' columnas
+} // fin 'for' renglones
+```
+
+### Ejemplo Iterar una Matriz
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Definir una matriz de 2x3
+  const int RENGLONES = 2, COLUMNA = 3;
+  int matriz[RENGLONES][COLUMNA] = {
+      {100, 200, 300}, // -> Primer renglón
+      {400, 500, 600}  // -> Segundo renglón
+  };
+
+  // Iterar los elementos de una matriz
+  cout << " ----Iterar la Matriz ----" << endl;
+  // Ciclo for externo (renglones)
+  for (int ren = 0; ren < 2; ren++) // Controla los renglones
+  {
+    for (int col = 0; col < 3; col++) // Controla las columnas
+    {
+      cout << matriz[ren][col] << " ";
+    } // fin 'for' columnas
+    // Imprimimos un salto para que cada renglo este en su propia línea
+    cout << endl;
+  } // fin 'for' renglones
+}
+```
+
+```console
+ ----Iterar la Matriz ----
+100 200 300 
+400 500 600 
+```
+
+### Matrices y Apuntadores
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Matrices y Apuntadores
+  const int RENGLONES = 2, COLUMNAS = 3;
+  // Definimos matriz
+  // int matriz[RENGLONES][COLUMNAS];
+  int **matriz = new int *[RENGLONES];
+
+  for (int renglon = 0; renglon < RENGLONES; renglon++)
+  {
+    matriz[renglon] = new int[COLUMNAS];
+  }
+
+  // Eliminamos de la memoria de la matriz
+  for (int renglon = 0; renglon < RENGLONES; renglon++)
+  {
+    delete[] matriz[renglon];
+  }
+  // Eliminamos la matriz por completo
+  delete[] matriz;
+}
+```
+
+### Introducir Datos en una Matriz
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Introducir datos a una matriz
+  int renglones, columnas;
+  cout << "Proporciona un numero de los renglones: ";
+  cin >> renglones;
+  cout << "Proporciona un numero de las columnas: ";
+  cin >> columnas;
+
+  // Definimos matriz
+  int **matriz = new int *[renglones];
+
+  for (int ren = 0; ren < renglones; ren++)
+  {
+    matriz[ren] = new int[columnas];
+  }
+
+  // Solicitar al usuario los valores de la matriz
+  for (int ren = 0; ren < renglones; ren++)
+  {
+    for (int col = 0; col < columnas; col++)
+    {
+      cout << "Dato[" << ren << "][" << col << "] = ";
+      cin >> matriz[ren][col];
+    }
+  }
+
+  // Iteramos los elementos para imprimirlos
+  cout << endl;
+  cout << "---- Iteramos la Matriz----" << endl;
+  for (int ren = 0; ren < renglones; ren++)
+  {
+    for (int col = 0; col < columnas; col++)
+    {
+      cout << "Matriz[" << ren << "][" << col << "] = " << matriz[ren][col] << endl;
+    }
+    cout << endl;
+  }
+
+  // Eliminamos de la memoria de la matriz
+  for (int renglon = 0; renglon < renglones; renglon++)
+  {
+    delete[] matriz[renglon];
+  }
+  // Eliminamos la matriz por completo
+  delete[] matriz;
+}
+```
+
+```console
+Proporciona un numero de los renglones: 2
+Proporciona un numero de las columnas: 3
+Dato[0][0] = 100
+Dato[0][1] = 200
+Dato[0][2] = 300
+Dato[1][0] = 400
+Dato[1][1] = 500
+Dato[1][2] = 600
+
+---- Iteramos la Matriz----
+Matriz[0][0] = 100
+Matriz[0][1] = 200
+Matriz[0][2] = 300
+
+Matriz[1][0] = 400
+Matriz[1][1] = 500
+Matriz[1][2] = 600
 ```
