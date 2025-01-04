@@ -2,6 +2,3 @@
 *.exe
 **/**/*.exe
 **/**.exe
-**.png
-.project
-sintaxis.txt
