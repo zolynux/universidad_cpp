@@ -104,6 +104,14 @@
     - [Ejemplo de Alcance de Variables en C](#ejemplo-de-alcance-de-variables-en-c)
     - [Funciones Recursivas](#funciones-recursivas)
     - [Ejemplo de las Funciones Recursivas](#ejemplo-de-las-funciones-recursivas)
+  - [Funciones Incorporadas](#funciones-incorporadas)
+    - [Largo de una Cadena](#largo-de-una-cadena)
+    - [Subcadenas](#subcadenas)
+    - [Concatenación](#concatenación)
+    - [Conversión de Cadena a Número](#conversión-de-cadena-a-número)
+    - [Conversión de Númeo a Cadena](#conversión-de-númeo-a-cadena)
+    - [Valor Absoluto de un Número](#valor-absoluto-de-un-número)
+    - [Redondeo y Truncado](#redondeo-y-truncado)
 
 ---
 
@@ -3023,4 +3031,205 @@ void funcionRecursiva(int numero)
 
 ```console
 1 2 3 4 5
+```
+
+## Funciones Incorporadas
+
+### Largo de una Cadena
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Obtener el largo de una cadena
+  string cadena = "Hola mundo";
+  cout << "Largo cadena: " << cadena.length() << endl;
+  // Recorrer la cadena
+  for (int i = 0; i < cadena.length(); i++)
+  {
+    cout << i << " - " << cadena[i] << endl;
+  }
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Largo cadena: 10
+0 - H
+1 - o
+2 - l
+3 - a
+4 -
+5 - m
+6 - u
+7 - n
+8 - d
+9 - o
+```
+
+### Subcadenas
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Subcadena
+  string cadena = "Hola Mundo";
+  // Subcadena de Hola
+  // string substri(inicio, cantidad de caracteres a copiar)
+  string subcadena1 = cadena.substr(0, 4);
+  cout << "subcadena1: " << subcadena1 << endl;
+  string subcadena2 = cadena.substr(5, 5);
+  cout << "subcadena2: " << subcadena2 << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+subcadena1: Hola
+subcadena2: Mundo
+```
+
+### Concatenación
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Concatenación de cadenas
+  string cadena1 = "Hola", cadena2 = "Mundo";
+  string cadena3 = cadena1 + " " + cadena2;
+  cout << "Concatenacion: " << cadena3;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Concatenacion: Hola Mundo
+```
+
+### Conversión de Cadena a Número
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Conversion de cadena a numero
+  // stoi - string to int
+  string a = "10", b = "20";
+  cout << a + b << endl;
+  // Conversion
+  int c = stoi(a) + stoi(b);
+  cout << c << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+1020
+30
+```
+
+### Conversión de Númeo a Cadena
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Convertir numero a cadena, to_string()
+  int a = 10, b = 20;
+  cout << a + b << endl;
+  // Convertir
+  string resultado = to_string(a) + to_string(b);
+  cout << "Resultado: " << resultado << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+30
+Resultado: 1020
+```
+
+### Valor Absoluto de un Número
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // Valor absoluto de una numero
+  int numero, numeroAbs;
+  cout << "Proporciona valor numero: ";
+  cin >> numero;
+  // Valor absoluto usando la funcion abs
+  numeroAbs = abs(numero);
+  cout << "Valor absoluto de " << numero << " es: " << numeroAbs << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Proporciona valor numero: -3
+Valor absoluto de -3 es: 3
+```
+
+### Redondeo y Truncado
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+  // Redondeo y Truncado
+  float numero = 8.5;
+  int redondeo, truncado;
+  // Round -> Mayor .5 se redondea al numero superior mas cercano
+  redondeo = round(numero);
+  cout << "Valor " << numero << " redondeado: " << redondeo << endl;
+  // Operacion truncado (trunc)
+  // Trunc omite la parte de punto flotante
+  truncado = trunc(numero);
+  cout << "Valor " << numero << " truncado " << truncado << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Valor 8.5 redondeado: 9
+Valor 8.5 truncado 8
 ```
