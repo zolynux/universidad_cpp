@@ -77,6 +77,33 @@
     - [Ejemplo Iterar una Matriz](#ejemplo-iterar-una-matriz)
     - [Matrices y Apuntadores](#matrices-y-apuntadores)
     - [Introducir Datos en una Matriz](#introducir-datos-en-una-matriz)
+  - [Funciones en C++](#funciones-en-c)
+    - [Función de Marea Visual](#función-de-marea-visual)
+    - [Necesidad de las Funciones](#necesidad-de-las-funciones)
+    - [Sintaxis de una función](#sintaxis-de-una-función)
+    - [Declaración y Uso de una Función](#declaración-y-uso-de-una-función)
+    - [Argumentos y Parámetros en una Función](#argumentos-y-parámetros-en-una-función)
+      - [Diferencia entre Parámetros y Argumentos](#diferencia-entre-parámetros-y-argumentos)
+      - [Diferencia entre Procedimiento y Función](#diferencia-entre-procedimiento-y-función)
+    - [Tipos de Funciones](#tipos-de-funciones)
+    - [Ejemplo de Procedimientos](#ejemplo-de-procedimientos)
+    - [Ejemplo de Funciones](#ejemplo-de-funciones)
+    - [Copia de Valores en Funciones](#copia-de-valores-en-funciones)
+    - [Paso por Valor](#paso-por-valor)
+    - [Ejemplo de Paso por Valor](#ejemplo-de-paso-por-valor)
+    - [Paso por Referencia](#paso-por-referencia)
+      - [Código explicado](#código-explicado)
+    - [Ejemplo de Paso por Referencia](#ejemplo-de-paso-por-referencia)
+    - [Arreglos y Apuntadores en C](#arreglos-y-apuntadores-en-c)
+      - [Copia Referencia en Arreglos](#copia-referencia-en-arreglos)
+      - [Código corregido y explicado](#código-corregido-y-explicado)
+    - [Paso por Referencia con Arreglos](#paso-por-referencia-con-arreglos)
+    - [Ejemplo Arreglos y Apuntadores](#ejemplo-arreglos-y-apuntadores)
+    - [Ejemplo de Cadena y Funciones](#ejemplo-de-cadena-y-funciones)
+    - [Alcance de Variables](#alcance-de-variables)
+    - [Ejemplo de Alcance de Variables en C](#ejemplo-de-alcance-de-variables-en-c)
+    - [Funciones Recursivas](#funciones-recursivas)
+    - [Ejemplo de las Funciones Recursivas](#ejemplo-de-las-funciones-recursivas)
 
 ---
 
@@ -122,6 +149,8 @@ A[Entrada] -->B[Función] --> C[Salida]
 ```
 
 ### Hola Mundo en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream> // Librería para la entrada y salida estándar
@@ -197,6 +226,8 @@ miVariable = 20; // un valor -> 0x334 -> Memoria Stack
 
 ### Ejemplo de Variables en C++
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 
@@ -225,6 +256,8 @@ Flotante: 7.9
 ```
 
 ### Ejemplo de Tipos de Datos en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -272,6 +305,8 @@ Booleano: 0
 
 ### Cadena en C++
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 #include <iomanip> // Input-Output-manipulation
@@ -296,6 +331,8 @@ Cadena: Hola
 ```
 
 ### Modo Debug en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -356,6 +393,8 @@ Obtener dirección memoria:
 
 **Ejemplo:** `cout << "Dir. memoria: " << &miNumero;` --> Imprime 0x333
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 #include <iomanip> // Input-Output-manipulation
@@ -384,6 +423,8 @@ Dir. memoria: 0x821b1ff86c
 ```
 
 ### Introducir Datos por Consola en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -414,6 +455,8 @@ Valor proporcionado: 20
 ```
 
 ### Introducir una Cadena en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -447,6 +490,8 @@ Nombre proporcionado: Zolyn UX
 ```
 
 ### Ejercicio Propuesto: Tipo de Datos en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -506,6 +551,8 @@ Empleado de confianza: 1
 
 Una vez definido el valor de una constante, ya que no podemos modificarlo.
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 #include <cmath>
@@ -538,6 +585,8 @@ Constante Matematica PI: 3.14159
 ```
 
 ### Tamaño en Bytes de los Tipos de Datos en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -605,6 +654,8 @@ Los operadores nos permiten realizar operaciones al usar valores y variables.
 
 ---
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -647,6 +698,8 @@ Modulo: 1
 
 ### Operadores de Incremento/Decremento en C++
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -684,6 +737,8 @@ Nuevo valor a (a--): 0
 ```
 
 ### Ejercicio Operadores de Incremento y Decremento en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -729,6 +784,8 @@ Valor c: 15
 Tambien existen operadores compuestos de:
 
 `+=`,`-=`,`*=`,`/=`,`%=`, entre varios más.
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -791,6 +848,8 @@ Son operadores que comparan dos variables o expresiones, y el resultado es una e
 | <=       | Menor o igual que | a <= b  |
 | ==       | igual que         | a == b  |
 | !=       | Distinto que      | a != b  |
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -888,7 +947,7 @@ Inverte el resultado lógico true -> false o false -> true
 | true  | false |
 | false | true  |
 
----
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -932,6 +991,8 @@ Resultado operador not: 0
 
 ### Ejercicio Valor dentro de Rango en C++
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -961,6 +1022,8 @@ Valor dentro de rango?: 1
 ```
 
 ### Ejercicio de Precedencia de Operadores en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -998,6 +1061,8 @@ Resultado: 9
 ## Sentencia en C++
 
 ### Sentencia if en C++
+
+**📄 Código:**
 
 ```c++
 if(condicion_booleana) {
@@ -1038,7 +1103,7 @@ Valor positivo: 10
 
 ### Sentencia if-else en C++
 
-**Sintáxis:**
+**Sintaxis:**
 
 ```c++
 if (condicion) {
@@ -1051,6 +1116,8 @@ if (condicion) {
 **Diagrama Flujo:**
 
 ![alt text](image-1.png)
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1094,6 +1161,8 @@ if (condicion) {
   // instrucciones..
 }
 ```
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1151,6 +1220,8 @@ if (condicion) {
 (condicion) ? caso verdadero : caso falso;
 ```
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1178,6 +1249,8 @@ Valor Positivo: 10
 ```
 
 ### Ejercicio Propuesto: Mayor de Edad
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1210,6 +1283,8 @@ Ingresaste es invalido
 ```
 
 ### Ejercicio Día de la Semana en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1284,6 +1359,8 @@ switch(valor_a_evaluar) {
 }
 ```
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1355,6 +1432,8 @@ while(condicion) {
 - La condición es una valor lógico (`true`/`false`).
 - El ciclo `while` repite la ejecución del bloque de código mientras la condición sea verdadera (`true`).
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1395,6 +1474,8 @@ do {
 
 - El ciclo `do while` ejecuta al menor una vez su bloque de código debido a que la condición a revisar sse encuentra al final del bloque.
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1425,6 +1506,8 @@ Valor positivo: 5
 ```
 
 ### Ejercicio ciclo `do while` en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1473,6 +1556,8 @@ for (/*(1). declaracion variables*/;/* (2). condicion evaluar*/;/*(4). incremeto
 
 Se repiten los pasos 2, 3 y 4 mientras la condición sea verdadera.
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1502,6 +1587,8 @@ int main()
 ```
 
 ### Incremento y Decremento de 3 en 3 con ciclo `for`
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1548,6 +1635,8 @@ Realizar la suma de los primeros 5 números utilizando un ciclo `for`:
       10      + 5
           15
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1577,6 +1666,8 @@ Suma Acumulativa:
 ```
 
 ### Ejercicio Suma Acumulativa while y do-while en C++
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1671,6 +1762,8 @@ cout << *b; // Imprime -> 20
 
 ### Ejercicio de Apuntadores
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1703,6 +1796,8 @@ Direccion memoria del apuntador '&b': 0x6f560
 ```
 
 ### Uso de Apuntadores
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1784,6 +1879,8 @@ No es necesario modificar todos los valores del arreglo
 
 ### Ejemplo de Arreglos
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1834,6 +1931,8 @@ int numerosArreglos[] = {100,200,300,400,500};
 | ----------- | --- | --- | --- | --- | --- |
 | **Valor:**  | 100 | 200 | 300 | 400 | 500 |
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -1867,6 +1966,8 @@ Elemento 5 - arrelo[4]: 500
 ```
 
 ### Iterar los Elementos de un Arreglo
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1911,6 +2012,8 @@ Elemento 5 - arrelo[4]: 500
 ```
 
 ### Arreglos y Apuntadores
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -1960,6 +2063,8 @@ Eliminar un arreglo de la memoria: 0x172
 ```
 
 ### Introducir Valores a un Arreglo
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -2066,6 +2171,8 @@ cout << matriz[0][1]; // -> ?
 
 ### Ejemplo de Matrices
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -2088,6 +2195,8 @@ int main()
 }
 ```
 
+**🟢 Ejecutar:**
+
 ```console
 Elemento 1 [0][0] = 100
 Elemento 2 [1][2] = 600
@@ -2105,6 +2214,8 @@ int matriz[2][3] = {
 **En memoria:**
 
 ![alt text](image-6.png)
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -2124,6 +2235,8 @@ int main()
   cout << "Elemento 2 [1][2] = " << matriz[1][2] << endl;
 }
 ```
+
+**🟢 Ejecutar:**
 
 ```console
 Elemento 1 [0][0] = 100
@@ -2154,6 +2267,8 @@ for (int ren = 0; ren < 2; ren++) // Controla los renglones
 
 ### Ejemplo Iterar una Matriz
 
+**📄 Código:**
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -2182,6 +2297,8 @@ int main()
 }
 ```
 
+**🟢 Ejecutar:**
+
 ```console
  ----Iterar la Matriz ----
 100 200 300 
@@ -2189,6 +2306,8 @@ int main()
 ```
 
 ### Matrices y Apuntadores
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -2218,6 +2337,8 @@ int main()
 ```
 
 ### Introducir Datos en una Matriz
+
+**📄 Código:**
 
 ```c++
 #include <iostream>
@@ -2272,6 +2393,8 @@ int main()
 }
 ```
 
+**🟢 Ejecutar:**
+
 ```console
 Proporciona un numero de los renglones: 2
 Proporciona un numero de las columnas: 3
@@ -2290,4 +2413,614 @@ Matriz[0][2] = 300
 Matriz[1][0] = 400
 Matriz[1][1] = 500
 Matriz[1][2] = 600
+```
+
+## Funciones en C++
+
+**Definición de Funciones:**
+
+Una función es un bloque de código reutilizable que realiza una tarea en partivular.
+Una función puede tene  parámetros de entrada y también puede devolver un valor de salida.
+Tanto los valores de entrada, como los valores de salida de una función son opcional.
+
+### Función de Marea Visual
+
+**Ejemplo:** Función para sumar dos valores:
+
+![alt text](image-7.png)
+
+### Necesidad de las Funciones
+
+Un programa de muchas líneas de código buscaremos dividirlo en funciones más pequeñas, con objetivos muy claros.
+
+**Divide y Vencerás:**
+
+![alt text](image-8.png)
+
+### Sintaxis de una función
+
+```c++
+<tipo_retorno> <nombre_funcion>(<paramtros>){
+  // Cuerpo de la función
+  return <tipo_retorno>
+} // Fin función
+```
+
+![alt text](image-9.png)
+
+### Declaración y Uso de una Función
+
+**1. Declaración de la función:**
+
+```c++
+void imprimir(int parametro){
+  cuot << parametro; // imprime 100 a 200 en consola
+}
+```
+
+**2. Llamando de la Función:**
+
+```c++
+int main() {
+  // ...
+  imprimir(100);
+  // ...
+  imprimir(200);
+  // ...
+}
+```
+
+### Argumentos y Parámetros en una Función
+
+#### Diferencia entre Parámetros y Argumentos
+
+**1. Declaración de la función:**
+
+```c++
+// numero = variable; => numero = 100; => parametro
+void imprimir(int numero){ // -> parametro -> variable local al método
+  cuot << parametro; // imprime 100
+}
+```
+
+**2. Llamando de la Función:**
+
+```c++
+int main() {
+  // ...
+  int variable = 100;
+  // ...
+  imprimir(variable); // variable -> argumento (valor enviado a la función)
+  // ...
+}
+```
+
+#### Diferencia entre Procedimiento y Función
+
+**Procedimiento:** No regresa ningún valor.
+
+**1. Definición Procedimiemto:**
+
+```c++
+void imprimir(int numero){
+  cuot << parametro; // imprime 100
+  // cout -> No regresa ningún valor
+}
+```
+
+**2. Llamando Procedimiemto:**
+
+```c++
+int main() {
+  // ...
+  int variable = 100;
+  // ...
+  imprimir(variable);
+  // ...
+}
+```
+
+**Función:** Regresa un valor al terminar de ejecutarse
+
+**Definición de una función:**
+
+```c++
+int sumar(int a, int b) {
+  int resultado a + b;
+  return resultado;
+}
+```
+
+**Llamada de la función:**
+
+```c++
+// Programa principal (main)
+  int a = 2, b = 3, c;
+  c = sumar(a, b);
+
+  cout << c << endl;
+```
+
+### Tipos de Funciones
+
+![alt text](image-10.png)
+
+### Ejemplo de Procedimientos
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+void saludar(string mensaje)
+{
+  cout << "Mensaje: " << mensaje << endl;
+  // return ;
+}
+
+int main()
+{
+  // Procedimiento en C++
+  string mensajeArg;
+  cout << "Proporciona el mensaje a mostrar: ";
+  getline(cin, mensajeArg);
+  // Llamar al procedimiento
+  saludar(mensajeArg);
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Proporciona el mensaje a mostrar: hola
+Mensaje: hola
+```
+
+### Ejemplo de Funciones
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+int sumar(int a, int b)
+{
+  int resultado = a + b;
+  return resultado;
+}
+
+int main()
+{
+  // Funcioens en C++
+  int argA, argB;
+  cout << "Proporciona el valor de numero 'a': ";
+  cin >> argA;
+  cout << "Proporciona el valor de numero 'b': ";
+  cin >> argB;
+  // Llamamos a la función
+  int resultado = sumar(argA, argB);
+  cout << "Resultado suma: " << resultado << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Proporciona el valor de numero 'a': 3
+Proporciona el valor de numero 'b': 5
+Resultado suma: 8
+```
+
+### Copia de Valores en Funciones
+
+```c++
+// Definimos variables
+int a = 10;
+// -> Se copia el valor de 'a' a la variable 'b'
+int b = a; 
+// -> Sólo se modifica el valor de 'b',
+// no afecta a 'a'
+b = 20; 
+```
+
+**En Memoria:**
+
+![alt text](image-11.png)
+
+### Paso por Valor
+
+```c++
+//                parametro = 10
+void pasoPorValor(int parametro) {
+  parametro = 20;
+}
+int main() {
+  int argumento = 10;
+  pasoPorValor(argumento);
+  cout << argumento; // -> Imprime 10
+}
+```
+
+![alt text](image-12.png)
+
+> [!NOTE]
+> **Conclusión:** Los cambios hechos en la función No afecta a la variable externa, solo se recibió una copia, son variables distintas.
+
+### Ejemplo de Paso por Valor
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+void cambiarValor(int parametro)
+{
+  parametro = 20;
+}
+
+int main()
+{
+  // Paso por valor
+  int argumento = 10;
+  cout << "Antes llamar funcion: " << argumento << endl;
+  cambiarValor(argumento);
+  cout << "Despues llamar funcion: " << argumento << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Antes llamar funcion: 10
+Despues llamar funcion: 10
+```
+
+### Paso por Referencia
+
+**Ventajas del paso por referencia:**
+
+- Permite modificar directamente variables fuera de la función.
+- Ahorra memoria, ya que no se copia el valor completo, sino solo su dirección.
+- Útil para estructuras grandes como arreglos o estructuras complejas.
+
+En este ejemplo se ilustra el paso por referencia en C, donde se modifica directamente el valor de una variable en la función llamada. Aquí tienes una explicación paso a paso:
+
+```c++
+void pasoRerencia(int *parametro) {
+  *parametro = 20;
+}
+
+int main() {
+  int argumento = 10;
+
+  pasoReferencia(&argumento);
+  cout << argumento; // -> imprime 20
+}
+```
+
+![alt text](image-12.png)
+
+> [!NOTE]
+> **Conclusión:** Los cambios hechos en la función Si afectan a la variable externa, ya que se recibió la referencia o dirección de memoria de la variable externa.
+
+#### Código explicado
+
+1. **`void pasoReferencia(int *parametro)`**
+   - Declara una función que toma un apuntador (`int *`) como parámetro.
+   - Dentro de la función, el operador `*` desreferencia el apuntador, permitiendo modificar el valor al que apunta.
+
+2. **`int main()`**
+   - Declara una variable `argumento` con valor inicial `10`.
+
+3. **`pasoReferencia(&argumento);`**
+   - Llama a la función `pasoReferencia`, pasando la dirección de memoria de `argumento` (con `&`).
+   - Dentro de la función, `*parametro = 20;` actualiza directamente el valor de `argumento` en la memoria.
+
+4. **`cout << argumento;`**
+   - Imprime el valor de `argumento`, que ahora es `20` tras la modificación en la función.
+
+**Flujo de ejecución:**
+
+1. Se inicializa `argumento = 10`.
+2. Se pasa la dirección de `argumento` a la función.
+3. La función desreferencia el apuntador y cambia el valor en la memoria de `10` a `20`.
+4. El valor actualizado de `argumento` se imprime como `20`.
+
+**Salida esperada:**
+
+```console
+20
+```
+
+### Ejemplo de Paso por Referencia
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+void cambiarValor(int *parametro)
+{
+  *parametro = 20;
+}
+
+int main()
+{
+  // Paso por referencia
+  int argumento = 10;
+  cout << "Antes llamar funcion: " << argumento << endl;
+  cambiarValor(&argumento);
+  cout << "Despues llamar funcion: " << argumento << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Antes llamar funcion: 10
+Despues llamar funcion: 20
+```
+
+### Arreglos y Apuntadores en C
+
+#### Copia Referencia en Arreglos
+
+En este ejemplo, se analiza cómo funcionan los arreglos y los apuntadores en C cuando se comparte la referencia entre ellos. Sin embargo, el código presentado tiene un error de sintaxis y concepto. Vamos a corregirlo y explicar su funcionamiento.
+
+```c++
+int arreglo1[] = {100,200};
+// Copiamos la referencia
+int *arreglo2[] = arreglo1;
+// |-> Apuntan a la misma direccion de memoria
+arreglo2[0] = 500; // -> Un cambio en arreglo2 modifica a arreglo1
+cout << arreglo1[0]; // Imprime 500
+cout << arreglo2[0]; // Imprime 500
+// Apuntan a la misma referencia 
+```
+
+#### Código corregido y explicado
+
+1. **Declaración y copia de referencia**
+
+ ```c++
+ int arreglo1[] = {100, 200};
+ int *arreglo2 = arreglo1; // Se copia la dirección base de arreglo1 en arreglo2
+ ```
+
+- `arreglo1` es un arreglo que contiene dos elementos: `{100, 200}`.
+- `arreglo2` es un apuntador que apunta al primer elemento de `arreglo1` (dirección base del arreglo).
+
+**Modificación a través de la referencia:**
+
+ ```c++
+ arreglo2[0] = 500; // Cambia el valor del primer elemento de arreglo1
+ ```
+
+- Como `arreglo2` apunta a `arreglo1`, cualquier cambio en `arreglo2` afecta directamente a `arreglo1`.
+
+**Impresión de valores:**
+
+   ```c++
+    cout << arreglo1[0]; // Imprime 500
+    cout << arreglo2[0]; // Imprime 500
+   ```
+
+- Ambos imprimen el mismo valor (`500`), ya que comparten la misma referencia.
+
+**Explicación clave:**
+
+- **Arreglos como apuntadores**: En C, los arreglos son esencialmente apuntadores constantes a su primer elemento.
+- **Referencia compartida**: `arreglo2` apunta al mismo bloque de memoria que `arreglo1`. Cualquier modificación afecta ambas referencias.
+- **Nota sobre la declaración original**: La línea `int *arreglo2[] = arreglo1;` no es válida porque `arreglo2` está siendo declarada como un arreglo de apuntadores (`int *arreglo2[]`), no como un simple apuntador (`int *arreglo2`).
+
+### Paso por Referencia con Arreglos
+
+```c++
+void pasoReferencia(int *parametro) {
+  parametro[0] = 500; // -> No se requiere usar '*' para acceder al valor
+  parametro[1] = 600; // -> No se requiere usar '*' para acceder al valor
+}
+int main() {
+  int argumento[] = {100, 200};
+  pasoReferencia(argumento); // -> No requiere '&'
+  cout << argumento[0]; // -> imprime 500
+  cout << argumento[1]; // -> imprime 600
+}
+```
+
+![alt text](image-14.png)
+
+> [!NOTE]
+> **Conclusión:** Los arreglos se pasan por referencia por default. No se requiere pasar con `&`
+
+### Ejemplo Arreglos y Apuntadores
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+// Procedimiento
+void cambiarValor(int *param)
+{
+  param[0] = 400;
+  param[1] = 500;
+  param[2] = 600;
+}
+
+int main()
+{
+  // Ejemplo paso por referencia con arreglos y apuntadores
+  int arg[] = {100, 200, 300};
+  cout << "Antes llamar funcion: ";
+  for (int i = 0; i < 3; i++)
+  {
+    cout << arg[i] << ", ";
+  }
+  cout << endl;
+  cambiarValor(arg);
+  cout << "Despues llamar funcion: ";
+  for (int i = 0; i < 3; i++)
+  {
+    cout << arg[i] << ", ";
+  }
+  cout << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Antes llamar funcion: 100, 200, 300, 
+Despues llamar funcion: 400, 500, 600,
+```
+
+### Ejemplo de Cadena y Funciones
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+// En este caso solo se recibe una copia del valor de la cadena
+/*
+void cambiarValor(string param) {
+  param = "Adios";
+}
+*/
+
+// Para cambiar el valor (paso por referencia)
+void cambiarValor(string &param)
+{
+  param = "Adios";
+}
+
+int main()
+{
+  // Paso de una cadena a una función
+  string arg = "Hola";
+  cout << "Antes llamar funcion: " << arg << endl;
+  cambiarValor(arg);
+  cout << "Despues llamar funcion: " << arg << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Antes llamar funcion: Hola
+Despues llamar funcion: Adios
+```
+
+### Alcance de Variables
+
+Es la región del programa donde se define, declara y utiliza una variable.
+
+- Alcance Global: Alcanza a todo el programa, pero es el menos utilizado.
+- Alcance Local: Se puede determinar dónde empieza y acaba el alcance de las variables locales basándose en el nivel más alto y en cada bloque de definición de una clase o módulo.
+
+![alt text](image-15.png)
+
+### Ejemplo de Alcance de Variables en C
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+// Variable global
+int variableGlobal = 5;
+
+// Cambio
+void cambio(int variableLocalFuncion)
+{
+  // Modificamos el valor de la variable local
+  variableLocalFuncion = 40;
+  // Modificamos la variable global
+  // variableGlboal = 50;
+
+  // Redefinir la variable global (oculta la variable global)
+  // Esto ya es una variable local al metodo cambio
+  int variableGlobal = 60;
+}
+
+int main()
+{
+  // Variables locales
+  int variableLocal = 10;
+  // Modificar la variable global
+  variableGlobal = 20;
+  // llamar una funcion
+  cambio(30);
+  // Imprimimos las variables
+  cout << "Variable local (main): " << variableLocal << endl;
+  cout << "Variable global: " << variableGlobal << endl;
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+Variable local (main): 10
+Variable global: 20
+```
+
+### Funciones Recursivas
+
+Es una función que se llama a si misma. La recursión es un proceso en el que el programa repite una sección de código de manera similar.
+
+**1. Una función que se llama a si misma:**
+
+![alt text](image-16.png)
+
+**2. Debe avanzar hacia un caso base, de lo contrario caemos en ciclos infinitos:**
+
+![alt text](image-17.png)
+
+### Ejemplo de las Funciones Recursivas
+
+**Código 📄:**
+
+```c++
+#include <iostream>
+using namespace std;
+
+// Definicion funcion recursiva (firma del metodo)
+void funcionRecursiva(int);
+
+int main()
+{
+  // Funciones recursivas
+  // Imprimir del 1 al 5 de manera recursiva
+  int valor = 5;
+  funcionRecursiva(valor);
+}
+
+// Implementacion de la funcion recursiva
+void funcionRecursiva(int numero)
+{
+  // Caso Base (numero == 1)
+  if (numero == 1)
+  {
+    cout << numero << " ";
+  }
+  // Caso recursiva
+  else
+  {
+    funcionRecursiva(numero - 1);
+    cout << numero << " ";
+  }
+}
+```
+
+**🟢 Ejecutar:**
+
+```console
+1 2 3 4 5
 ```
